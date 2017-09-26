@@ -5,9 +5,16 @@ export const showJoke = (joke) => ({
   joke
 })
 
+export const requestJoke = (searchWord) => ({
+  type: types.REQUEST_JOKE,
+  searchWord
+})
+
 export function fetchJoke(searchWord) {
   return function (dispatch) {
-    searchWord = searchWord.replace(" ", "_");
+    // include dispatch action
+    dispatch(requestJoke(searchWord));
+    searchWord = searchWord.replace(" ", "%20");
     return fetch("https://icanhazdadjoke.com/search?term=" + searchWord + "&limit=1",
     {
       headers : {

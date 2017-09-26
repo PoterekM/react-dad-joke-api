@@ -10,8 +10,9 @@ const JokeDisplay = ({ dispatch, joke }) => {
     </div>
   )
 }
+
 JokeDisplay.propTypes = {
-  joke: PropTypes.array
+  joke: PropTypes.object
 };
 
 const mapStateToProps = state => {
