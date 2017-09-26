@@ -1,8 +1,8 @@
 import * as types from "./../constants/ActionTypes";
 
-export const showJoke = (searchWord) => ({
+export const showJoke = (joke) => ({
   type: types.SHOW_JOKE,
-  searchWord
+  joke
 })
 
 export function fetchJoke(searchWord) {
@@ -23,6 +23,7 @@ export function fetchJoke(searchWord) {
         dispatch(showJoke(searchWord));
       }else {
         console.log("Sorry, we're not creative enough to have a joke with *that* word in it...");
+        dispatch(showJoke(searchWord));
       }
     });
   };
