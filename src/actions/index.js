@@ -20,10 +20,10 @@ export function fetchJoke(searchWord) {
         const joke = json.results[0].joke
         console.log(joke);
         console.log(searchWord);
-        dispatch(showJoke(searchWord));
+        dispatch(showJoke(joke));
       }else {
         console.log("Sorry, we're not creative enough to have a joke with *that* word in it...");
-        dispatch(showJoke(searchWord));
+        dispatch(showJoke(joke));
       }
     });
   };
