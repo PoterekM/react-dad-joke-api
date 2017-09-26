@@ -1,5 +1,9 @@
 import * as types from "./../constants/ActionTypes";
 
+export const showJoke = (searchWord) => ({
+  type: types.SHOW_JOKE,
+  searchWord
+})
 
 export function fetchJoke(searchWord) {
   return function (dispatch) {
@@ -15,7 +19,11 @@ export function fetchJoke(searchWord) {
       if (json.total_jokes > 0) {
         const joke = json.results[0].joke
         console.log(joke);
+        console.log(searchWord);
+        dispatch(showJoke(searchWord));
+      }else {
+        console.log("Sorry, we're not creative enough to have a joke with *that* word in it...");
       }
-    })
-  }
+    });
+  };
 }
