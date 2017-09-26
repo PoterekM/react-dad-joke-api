@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./Header";
-import PhotoSearch from "./PhotoSearch";
+import JokeSearch from "./JokeSearch";
 
 function App(){
   return (
     <div>
       <Header/>
-      <PhotoSearch/>
+      <JokeSearch/>
     </div>
   );
 }
