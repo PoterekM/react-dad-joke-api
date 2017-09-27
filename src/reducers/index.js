@@ -3,7 +3,7 @@ const { defaultState, types } = constants;
 
 
 
-const jokesByJoke = (state = defaultState, action) => {
+export default (state = defaultState, action) => {
   let joke;
   let newJoke;
   let newState;
@@ -15,7 +15,6 @@ const jokesByJoke = (state = defaultState, action) => {
       searchWord: action.searchWord,
     };
     newState = Object.assign({}, state, {
-      // [action.joke]: newJoke
       [action.joke]: newJoke
     });
     return newState;
@@ -31,6 +30,3 @@ const jokesByJoke = (state = defaultState, action) => {
       return state;
   }
 }
-
-
-export default jokesByJoke;

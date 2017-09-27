@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 
 const JokeDisplay = ({ dispatch, joke }) => {
-  console.log(joke.joke)
+  console.log(joke)
   return (
     <div>
       <h1>{joke.joke}</h1>
