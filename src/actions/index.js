@@ -30,7 +30,7 @@ export function fetchJoke(searchWord) {
         console.log(searchWord);
         dispatch(showJoke(joke));
       }else {
-        console.log("Sorry, we're not creative enough to have a joke with *that* word in it...");
+        dispatch(showJoke("Sorry, we're not creative enough to have a joke with *that* word in it..."));
       }
     });
   };
