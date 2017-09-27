@@ -17,7 +17,6 @@ export default (state = defaultState, action) => {
     newState = Object.assign({}, state, {
       [action.joke]: newJoke
     });
-    return newState;
 
     case types.SHOW_JOKE:
     joke = state[action.joke];
