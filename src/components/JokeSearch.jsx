@@ -15,9 +15,10 @@ class JokeSearch extends React.Component {
     if (!_searchWord.value.trim()) {
       return;
     }
-    this.props.dispatch(fetchJoke(_searchWord.value.trim()));
     console.log(_searchWord.value);
-    _searchWord.value = "";
+    this.props.dispatch(fetchJoke(_searchWord.value.trim()));
+    // console.log(_searchWord.value);
+    // _searchWord.value = "";
   }
 
   render(){

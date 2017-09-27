@@ -7,13 +7,14 @@ export const showJoke = (joke) => ({
 
 export const requestJoke = (searchWord) => ({
   type: types.REQUEST_JOKE,
-  searchWord
+  searchWord,
 })
 
 export function fetchJoke(searchWord) {
+  console.log(searchWord);
   return function (dispatch) {
-    // include dispatch action
     dispatch(requestJoke(searchWord));
+    console.log(searchWord);
     searchWord = searchWord.replace(" ", "%20");
     return fetch("https://icanhazdadjoke.com/search?term=" + searchWord + "&limit=1",
     {
@@ -30,7 +31,7 @@ export function fetchJoke(searchWord) {
         dispatch(showJoke(joke));
       }else {
         console.log("Sorry, we're not creative enough to have a joke with *that* word in it...");
-        dispatch(showJoke("Sorry, we're not creative enough to habe a joke with that word in it"));
+
       }
     });
   };
